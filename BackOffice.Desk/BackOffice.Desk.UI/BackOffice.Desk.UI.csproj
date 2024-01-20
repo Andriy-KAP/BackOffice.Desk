@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +93,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Desk.Theme.Base\BackOffice.Desk.Theme.Base.csproj">
+      <Project>{61892081-bfd8-4cd7-9d96-3bd010444c18}</Project>
+      <Name>BackOffice.Desk.Theme.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Desk.Theme.Default\BackOffice.Desk.Theme.Default.csproj">
+      <Project>{cd1b37a2-1cca-422f-8906-39a2ce4c60b5}</Project>
+      <Name>BackOffice.Desk.Theme.Default</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Desk.UI.Common\BackOffice.Desk.UI.Common.csproj">
+      <Project>{5856a3a1-9348-4ba1-9b85-f00b6f3f4e21}</Project>
+      <Name>BackOffice.Desk.UI.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sections="clr-namespace:BackOffice.Desk.UI.Common.ViewModel.Sections">
+    <DataTemplate DataType="{x:Type sections:ClientsViewModel}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0">Clients view...</TextBlock>
+        </Grid>
+    </DataTemplate>
 </ResourceDictionary>
