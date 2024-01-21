@@ -13,7 +13,7 @@
         MouseDown="Window_MouseDown">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.35*"/>
+            <ColumnDefinition Width="230"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
@@ -21,9 +21,76 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Style="{StaticResource MenuButton}" Margin="10 0 0 0">
+        <ToggleButton Style="{StaticResource MenuButton}" Margin="10 0 0 0">
             <icon:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
-        </Button>
+            <ToggleButton.Triggers>
+                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="hidePanel">
+                            <DoubleAnimation Storyboard.TargetName="navigationPanel"
+                                             Storyboard.TargetProperty="Width"
+                                             BeginTime="0:0:0"
+                                             From="220" To="100"
+                                             Duration="0:0:0.2"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="showPanel">
+                            <DoubleAnimation Storyboard.TargetName="navigationPanel"
+                                             Storyboard.TargetProperty="Width"
+                                             BeginTime="0:0:0"
+                                             From="100" To="220"
+                                             Duration="0:0:0.2"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ToggleButton.Triggers>
+        </ToggleButton>
+        <Border x:Name="navigationPanel" Width="220" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
+            <DockPanel>
+                <Border Width="80" Height="80" Padding="3" Background="#fff" CornerRadius="100"
+                        DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Images/user2.png"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <!--Menu titles-->
+                <TextBlock Text="Tire Plus" Foreground="White" FontSize="25" FontWeight="SemiBold"
+                           DockPanel.Dock="Top" TextAlignment="Center" Margin="5 25 0 10"></TextBlock>
+                <!--Menu separator-->
+                <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
+                <StackPanel DockPanel.Dock="Top">
+                    <Button Style="{StaticResource MenuItemButton}">
+                        <StackPanel  Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Clients"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource MenuItemButton}" >
+                        <StackPanel  Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="CalendarAccount" Style="{StaticResource MenuItemButtonIcon}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Orders"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource MenuItemButton}">
+                        <StackPanel  Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Clients"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button Style="{StaticResource MenuItemButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                    <StackPanel  Orientation="Horizontal">
+                        <icon:PackIconMaterial Kind="Logout" Style="{StaticResource MenuItemButtonIcon}"/>
+                        <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Logout"/>
+                    </StackPanel>
+                </Button>
+            </DockPanel>
+        </Border>
         <!--<ContentControl Margin="20" Grid.Column="0" Content="{Binding Clients}"/>-->
     </Grid>
 </Window>

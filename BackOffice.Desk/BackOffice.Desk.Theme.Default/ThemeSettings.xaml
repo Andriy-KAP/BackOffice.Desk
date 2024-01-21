@@ -3,4 +3,6 @@
     <SolidColorBrush x:Key="WindowBackgroundColor" Color="#eff2f7"/>
     <SolidColorBrush x:Key="MenuButtonForeground" Color="#6e7783"/>
     <SolidColorBrush x:Key="MenuButtonHoverBackground" Color="#dcdcdc"/>
+    <SolidColorBrush x:Key="MenuItemButtonForeground" Color="#d0c0ff"/>
+    <SolidColorBrush x:Key="MenuItemButtonHoverBackground" Color="#7b5cd6"/>
 </ResourceDictionary>
