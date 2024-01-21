@@ -13,7 +13,7 @@
         MouseDown="Window_MouseDown">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
@@ -91,6 +91,6 @@
                 </Button>
             </DockPanel>
         </Border>
-        <!--<ContentControl Margin="20" Grid.Column="0" Content="{Binding Clients}"/>-->
+        <ContentControl Margin="20" Grid.Column="1" Grid.Row="1" Content="{Binding Clients}"/>
     </Grid>
 </Window>
