@@ -6,8 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/BackOffice.Desk.Theme.Base;component/BackOffice.Desk.Theme.Base.xaml" />
                 <ResourceDictionary Source="/BackOffice.Desk.Theme.Default;component/ThemeSettings.xaml"/>
+                <ResourceDictionary Source="/BackOffice.Desk.Theme.Base;component/BackOffice.Desk.Theme.Base.xaml" />
                 <ResourceDictionary Source="/BackOffice.Desk.UI.Common;component/View/ViewTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
