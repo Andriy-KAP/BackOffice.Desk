@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BackOffice.Desk.UI.Common.ViewModel
 {
-    public class RootViewModel: ViewModelBase
+    public class RootViewModel
     {
         public ClientsViewModel Clients { get; private set; }
 
