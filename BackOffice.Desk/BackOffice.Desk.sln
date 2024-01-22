@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Desk.Theme.Base"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Desk.Theme.Default", "BackOffice.Desk.Theme.Default\BackOffice.Desk.Theme.Default.csproj", "{CD1B37A2-1CCA-422F-8906-39A2CE4C60B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Common", "WPF.Common\WPF.Common.csproj", "{AED65BB0-F436-4664-8353-F36E343AF1EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CD1B37A2-1CCA-422F-8906-39A2CE4C60B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD1B37A2-1CCA-422F-8906-39A2CE4C60B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD1B37A2-1CCA-422F-8906-39A2CE4C60B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED65BB0-F436-4664-8353-F36E343AF1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED65BB0-F436-4664-8353-F36E343AF1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED65BB0-F436-4664-8353-F36E343AF1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED65BB0-F436-4664-8353-F36E343AF1EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{D2568CBC-7694-44BD-B76A-DAFF5508A039} = {65B40247-609B-419E-8C72-5775349FBB78}
 		{61892081-BFD8-4CD7-9D96-3BD010444C18} = {0857113F-61BB-4314-80D3-984E5BBBF80B}
 		{CD1B37A2-1CCA-422F-8906-39A2CE4C60B5} = {0857113F-61BB-4314-80D3-984E5BBBF80B}
+		{AED65BB0-F436-4664-8353-F36E343AF1EC} = {79E25A2D-EAF5-492F-8DF6-B9ED51FE6CF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6289F226-77A2-408A-B397-7EC03EDC2D16}

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:wpfCommon="clr-namespace:WPF.Common.Controls;assembly=WPF.Common"
         xmlns:local="clr-namespace:BackOffice.Desk.UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1600" 
@@ -42,6 +43,12 @@
                                              BeginTime="0:0:0"
                                              From="80" To="40"
                                              Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="companyName"
+                                             Storyboard.TargetProperty="FontSize"
+                                             BeginTime="0:0:0"
+                                             From="25" To="16"
+                                             Duration="0:0:0.2"></DoubleAnimation>
+                            
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -63,11 +70,17 @@
                                              BeginTime="0:0:0"
                                              From="40" To="80"
                                              Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="companyName"
+                                             Storyboard.TargetProperty="FontSize"
+                                             BeginTime="0:0:0"
+                                             From="16" To="25"
+                                             Duration="0:0:0.2"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
             </ToggleButton.Triggers>
         </ToggleButton>
+        <wpfCommon:SearchInput Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,125,0"></wpfCommon:SearchInput>
         <Border x:Name="navigationPanel" Width="220" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
             <DockPanel>
                 <Border x:Name="userLogo" Width="80" Height="80" Padding="3" Background="#fff" CornerRadius="100"
@@ -79,34 +92,34 @@
                     </Ellipse>
                 </Border>
                 <!--Menu titles-->
-                <TextBlock Text="Tire Plus" Foreground="White" FontSize="25" FontWeight="SemiBold"
+                <TextBlock x:Name="companyName" Text="Tire Plus" Foreground="White" FontSize="25" FontWeight="SemiBold"
                            DockPanel.Dock="Top" TextAlignment="Center" Margin="5 25 0 10"></TextBlock>
                 <!--Menu separator-->
                 <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
                 <StackPanel DockPanel.Dock="Top">
-                    <Button Style="{StaticResource MenuItemButton}">
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}">
                         <StackPanel  Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
-                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Clients"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Clients"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource MenuItemButton}" >
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" >
                         <StackPanel  Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="CalendarAccount" Style="{StaticResource MenuItemButtonIcon}"/>
-                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Orders"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Orders"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource MenuItemButton}">
                         <StackPanel  Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
-                            <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Clients"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Clients"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
                 <Button Style="{StaticResource MenuItemButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
                     <StackPanel  Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Logout" Style="{StaticResource MenuItemButtonIcon}"/>
-                        <TextBlock VerticalAlignment="Center" Margin="5 0 0 0" Text="Logout"/>
+                        <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Logout"/>
                     </StackPanel>
                 </Button>
             </DockPanel>
