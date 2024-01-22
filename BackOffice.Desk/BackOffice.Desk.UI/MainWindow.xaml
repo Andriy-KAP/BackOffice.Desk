@@ -32,6 +32,16 @@
                                              BeginTime="0:0:0"
                                              From="220" To="100"
                                              Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="userLogo"
+                                             Storyboard.TargetProperty="Width"
+                                             BeginTime="0:0:0"
+                                             From="80" To="40"
+                                             Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="userLogo"
+                                             Storyboard.TargetProperty="Height"
+                                             BeginTime="0:0:0"
+                                             From="80" To="40"
+                                             Duration="0:0:0.2"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -43,6 +53,16 @@
                                              BeginTime="0:0:0"
                                              From="100" To="220"
                                              Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="userLogo"
+                                             Storyboard.TargetProperty="Width"
+                                             BeginTime="0:0:0"
+                                             From="40" To="80"
+                                             Duration="0:0:0.2"></DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="userLogo"
+                                             Storyboard.TargetProperty="Height"
+                                             BeginTime="0:0:0"
+                                             From="40" To="80"
+                                             Duration="0:0:0.2"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -50,7 +70,7 @@
         </ToggleButton>
         <Border x:Name="navigationPanel" Width="220" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
             <DockPanel>
-                <Border Width="80" Height="80" Padding="3" Background="#fff" CornerRadius="100"
+                <Border x:Name="userLogo" Width="80" Height="80" Padding="3" Background="#fff" CornerRadius="100"
                         DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
                     <Ellipse>
                         <Ellipse.Fill>
