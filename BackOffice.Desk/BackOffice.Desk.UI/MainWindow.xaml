@@ -32,6 +32,7 @@
                                              Storyboard.TargetProperty="Width"
                                              BeginTime="0:0:0"
                                              From="220" To="100"
+                                             
                                              Duration="0:0:0.2"></DoubleAnimation>
                             <DoubleAnimation Storyboard.TargetName="userLogo"
                                              Storyboard.TargetProperty="Width"
@@ -97,7 +98,13 @@
                 <!--Menu separator-->
                 <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
                 <StackPanel DockPanel.Dock="Top">
-                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}">
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" Command="{Binding HomeCommand}">
+                        <StackPanel  Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="Home" Style="{StaticResource MenuItemButtonIcon}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Home"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" Command="{Binding ClientsCommand}">
                         <StackPanel  Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
                             <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Clients"/>
@@ -109,12 +116,6 @@
                             <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Orders"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource MenuItemButton}">
-                        <StackPanel  Orientation="Horizontal">
-                            <icon:PackIconMaterial Kind="Account" Style="{StaticResource MenuItemButtonIcon}"/>
-                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Clients"/>
-                        </StackPanel>
-                    </Button>
                 </StackPanel>
                 <Button Style="{StaticResource MenuItemButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
                     <StackPanel  Orientation="Horizontal">
@@ -124,6 +125,6 @@
                 </Button>
             </DockPanel>
         </Border>
-        <ContentControl Margin="20" Grid.Column="1" Grid.Row="1" Content="{Binding Clients}"/>
+        <ContentControl Margin="20" Grid.Column="1" Grid.Row="1" Content="{Binding CurrentView}"/>
     </Grid>
 </Window>

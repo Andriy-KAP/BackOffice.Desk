@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackOffice.Desk.UI.Common.ViewModel.Sections
+namespace BackOffice.Desk.UI.Common.ViewModel.ViewModels
 {
     public sealed class ClientsViewModel : ViewModelBase<ClientItemViewModel>
     {
