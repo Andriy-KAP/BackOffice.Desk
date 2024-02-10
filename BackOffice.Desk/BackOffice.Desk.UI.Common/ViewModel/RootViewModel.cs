@@ -25,21 +25,27 @@ namespace BackOffice.Desk.UI.Common.ViewModel
 
         public ICommand HomeCommand { get; set; }
         public ICommand ClientsCommand { get; set; }
-
+        public ICommand OrdersCommand { get; set; }
         public RootViewModel()
         {
-            HomeCommand = new RelayCommand(Home);
-            ClientsCommand = new RelayCommand(Clients);
+            CurrentView = new HomeViewModel();
+
+            HomeCommand = new RelayCommand(ExecuteHomeCommand);
+            ClientsCommand = new RelayCommand(ExecuteClientsCommand);
+            OrdersCommand = new RelayCommand(ExecuteOrdersCommand);
         }
 
-        private void Home(object obj)
+        private void ExecuteHomeCommand(object obj)
         {
             CurrentView = new HomeViewModel();
         }
-
-        private void Clients(object obj)
+        private void ExecuteClientsCommand(object obj)
         {
             CurrentView = new ClientsViewModel();
+        }
+        private void ExecuteOrdersCommand(object obj)
+        {
+            CurrentView = new OrdersViewModel();
         }
     }
 }

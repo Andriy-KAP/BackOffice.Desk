@@ -110,7 +110,7 @@
                             <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Clients"/>
                         </StackPanel>
                     </Button>
-                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" >
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" Command="{Binding OrdersCommand}" >
                         <StackPanel  Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="CalendarAccount" Style="{StaticResource MenuItemButtonIcon}"/>
                             <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Orders"/>

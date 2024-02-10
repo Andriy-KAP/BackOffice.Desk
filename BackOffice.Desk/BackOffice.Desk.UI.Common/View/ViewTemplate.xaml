@@ -8,4 +8,7 @@
     <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
         <views:HomeView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type viewmodel:OrdersViewModel}">
+        <views:OrdersView />
+    </DataTemplate>
 </ResourceDictionary>
