@@ -22,7 +22,7 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ToggleButton Style="{StaticResource MenuButton}" Margin="10 0 0 0">
+        <ToggleButton IsChecked="True" Style="{StaticResource MenuButton}" Margin="10 0 0 0">
             <icon:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
             <ToggleButton.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
