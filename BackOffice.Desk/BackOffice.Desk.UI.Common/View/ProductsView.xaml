@@ -44,10 +44,10 @@
         <!--#region DataGrid-->
         <DataGrid ItemsSource="{Binding Items}" x:Name="productsDataGrid" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Style="{DynamicResource DataGridStyle1}" Grid.Row="3">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
+                <DataGridCheckBoxColumn ElementStyle="{StaticResource CheckBoxStyle1}" CanUserResize="False" Width="Auto">
                     <DataGridCheckBoxColumn.HeaderTemplate>
                         <DataTemplate>
-                            <CheckBox/>
+                            <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
                         </DataTemplate>
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
@@ -84,6 +84,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <CheckBox Style="{DynamicResource CheckBoxStyle1}"/>
         <!--#endregion-->
         <!--#region Pagination-->
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="4">
