@@ -7,6 +7,8 @@
              xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Style="{StaticResource PageStyle}">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -15,6 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
+        <!--#region Page header-->
         <DockPanel>
             <TextBlock HorizontalAlignment="Left" Text="Products" FontSize="32" FontWeight="SemiBold" Margin="20 0 0 0"></TextBlock>
             <Button HorizontalAlignment="Right" Width="200" Style="{StaticResource NewOperationButton}">
@@ -25,13 +28,84 @@
             </Button>
         </DockPanel>
         <Separator VerticalAlignment="Bottom" Height="1" Margin="0 -1 0 0" Background="{StaticResource SeparatorBackgroundColor}"/>
+        <!--#endregion-->
+        <!--#region Tabs-->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 2 0 0">
             <Button Style="{StaticResource TabButton}" Content="Wheels"></Button>
             <Button Style="{StaticResource TabButton}" Content="Accumulators"></Button>
         </StackPanel>
+        <!--#endregion-->
+        <!--#region Counter-->
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock FontSize="14" FontWeight="SemiBold" Margin="10 0 0 0" VerticalAlignment="Center" Text="Total products: "/>
             <TextBlock FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" Text="{Binding Items.Count}"/>
         </StackPanel>
+        <!--#endregion-->
+        <!--#region DataGrid-->
+        <DataGrid ItemsSource="{Binding Items}" x:Name="productsDataGrid" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Style="{DynamicResource DataGridStyle1}" Grid.Row="3">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="#" Binding="{Binding Id}" IsReadOnly="True" CanUserResize="False" Width="Auto" />
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" IsReadOnly="True" CanUserResize="False" Width="Auto" />
+                <!--<DataGridTemplateColumn Header="Model" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="Red">
+                                    <TextBlock Text="{Binding Model}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#fff"/>
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding TotalCount}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Reserved" Binding="{Binding Reserved}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Free" Binding="{Binding Free}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource GridEditButton}">
+                                    <icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}" />
+                                </Button>
+                                <Button Style="{StaticResource GridRemoveButton}">
+                                    <icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource GridButtonIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--#endregion-->
+        <!--#region Pagination-->
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="4">
+            <Button Style="{StaticResource PagingButton}">
+                <icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource PagingButtonIcon}" />
+            </Button>
+            <Button Style="{StaticResource PagingButton}" Content="1"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="2"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="3" Foreground="#fff" Background="#7950f2"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="4"></Button>
+
+            <TextBlock Text="..." Foreground="#6c7682" VerticalAlignment="Center"/>
+
+            <Button Style="{StaticResource PagingButton}" Content="5"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="6"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="7"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="8"></Button>
+            <Button Style="{StaticResource PagingButton}" Content="9"></Button>
+            <Button Style="{StaticResource PagingButton}">
+                <icon:PackIconMaterial Kind="ChevronRight" Style="{StaticResource PagingButtonIcon}"/>
+            </Button>
+        </StackPanel>
+        <!--#endregion-->
     </Grid>
 </UserControl>

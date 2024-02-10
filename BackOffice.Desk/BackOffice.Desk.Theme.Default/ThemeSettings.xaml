@@ -6,4 +6,5 @@
     <SolidColorBrush x:Key="MenuItemButtonForeground" Color="#d0c0ff"/>
     <SolidColorBrush x:Key="MenuItemButtonHoverBackground" Color="#7b5cd6"/>
     <SolidColorBrush x:Key="SeparatorBackgroundColor" Color="#dae2ea" />
+    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
 </ResourceDictionary>
