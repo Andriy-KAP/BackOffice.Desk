@@ -18,10 +18,15 @@
             <TextBlock HorizontalAlignment="Left" Text="Products" FontSize="32" FontWeight="SemiBold" Margin="20 0 0 0"></TextBlock>
             <Button HorizontalAlignment="Right" Width="200" Style="{StaticResource NewOperationButton}">
                 <StackPanel Orientation="Horizontal">
-                    <icon:PackIconMaterial Kind="BoxShadow" Style="{StaticResource MenuItemButtonIcon}"/>
+                    <icon:PackIconMaterial Kind="Plus" Style="{StaticResource MenuItemButtonIcon}"/>
                     <TextBlock VerticalAlignment="Center" Text="Add new product"/>
                 </StackPanel>
             </Button>
         </DockPanel>
+        <Separator VerticalAlignment="Bottom" Height="1" Margin="0 -1 0 0" Background="{StaticResource SeparatorBackgroundColor}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 2 0 0">
+            <Button Style="{StaticResource TabButton}" Content="Wheels"></Button>
+            <Button Style="{StaticResource TabButton}" Content="Accumulators"></Button>
+        </StackPanel>
     </Grid>
 </UserControl>
