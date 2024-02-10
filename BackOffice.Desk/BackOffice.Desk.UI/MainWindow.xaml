@@ -116,6 +116,12 @@
                             <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Orders"/>
                         </StackPanel>
                     </Button>
+                    <Button x:Uid="menuBtn" Style="{StaticResource MenuItemButton}" Command="{Binding ProductsCommand}" >
+                        <StackPanel  Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="BoxShadow" Style="{StaticResource MenuItemButtonIcon}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="5 0 50 0" Text="Products"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
                 <Button Style="{StaticResource MenuItemButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
                     <StackPanel  Orientation="Horizontal">

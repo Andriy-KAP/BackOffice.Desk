@@ -22,10 +22,12 @@ namespace BackOffice.Desk.UI.Common.ViewModel
                 OnPropertyChanged(nameof(CurrentView));
             }
         }
-
+        #region Commands
         public ICommand HomeCommand { get; set; }
         public ICommand ClientsCommand { get; set; }
         public ICommand OrdersCommand { get; set; }
+        public ICommand ProductsCommand { get; set; }
+        #endregion
         public RootViewModel()
         {
             CurrentView = new HomeViewModel();
@@ -33,8 +35,9 @@ namespace BackOffice.Desk.UI.Common.ViewModel
             HomeCommand = new RelayCommand(ExecuteHomeCommand);
             ClientsCommand = new RelayCommand(ExecuteClientsCommand);
             OrdersCommand = new RelayCommand(ExecuteOrdersCommand);
+            ProductsCommand = new RelayCommand(ExecuteProductsCommand);
         }
-
+        #region Execute commands
         private void ExecuteHomeCommand(object obj)
         {
             CurrentView = new HomeViewModel();
@@ -47,5 +50,10 @@ namespace BackOffice.Desk.UI.Common.ViewModel
         {
             CurrentView = new OrdersViewModel();
         }
+        private void ExecuteProductsCommand(object obj)
+        {
+            CurrentView = new ProductsViewModel();
+        }
+        #endregion
     }
 }
