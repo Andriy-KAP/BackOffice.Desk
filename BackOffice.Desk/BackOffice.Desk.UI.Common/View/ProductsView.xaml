@@ -84,7 +84,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <CheckBox Style="{DynamicResource CheckBoxStyle1}"/>
         <!--#endregion-->
         <!--#region Pagination-->
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="4">

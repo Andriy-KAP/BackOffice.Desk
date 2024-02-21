@@ -11,7 +11,9 @@
         Style="{StaticResource WindowStyle}"
         AllowsTransparency="True" 
         WindowStyle="None" 
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown"
+        >
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -22,6 +24,22 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="minimizeBtn" Grid.Row="1" Grid.Column="0" Style="{StaticResource MinimizeButtonStyle}" Click="minimizeBtn_Click"></Button>
+            <Button x:Name="maximizeBtn" Grid.Row="1" Grid.Column="1" Style="{StaticResource MaximizeButtonStyle}" Click="maximizeBtn_Click"></Button>
+            <Button x:Name="restoreBtn" Grid.Row="1" Grid.Column="1" Style="{StaticResource RestoreButtonStyle}" Click="restoreBtn_Click"></Button>
+            <Button x:Name="closeBtn" Grid.Row="1" Grid.Column="2" Style="{StaticResource CloseButtonStyle}" Click="closeBtn_Click"></Button>
+        </Grid>
         <ToggleButton IsChecked="True" Style="{StaticResource MenuButton}" Margin="10 0 0 0">
             <icon:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
             <ToggleButton.Triggers>
@@ -49,7 +67,7 @@
                                              BeginTime="0:0:0"
                                              From="25" To="16"
                                              Duration="0:0:0.2"></DoubleAnimation>
-                            
+
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

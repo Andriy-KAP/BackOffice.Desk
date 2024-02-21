@@ -26,14 +26,56 @@ namespace BackOffice.Desk.UI
             InitializeComponent();
 
             DataContext = new RootViewModel();
+
+            this.restoreBtn.Visibility= Visibility.Collapsed;
+            Application.Current.MainWindow.SizeChanged += MainWindow_SizeChanged;
         }
 
+        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if(WindowState == WindowState.Maximized)
+            {
+                this.restoreBtn.Visibility = Visibility.Visible;
+                this.maximizeBtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.restoreBtn.Visibility = Visibility.Collapsed;
+                this.maximizeBtn.Visibility = Visibility.Visible;
+            }
+        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
             }
+        }
+
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void restoreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            this.maximizeBtn.Visibility = Visibility.Visible;
+            this.restoreBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void maximizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Normal)
+                this.WindowState = WindowState.Maximized;
+            this.restoreBtn.Visibility = Visibility.Visible;
+            this.maximizeBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void minimizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
